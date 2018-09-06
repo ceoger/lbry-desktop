@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { selectClaimedRewardsByTransactionId } from 'redux/selectors/rewards';
+import { selectClaimedRewardsByTransactionId } from 'lbryinc';
 import { doNavigate } from 'redux/actions/navigation';
 import { doNotify } from 'lbry-redux';
 import { selectAllMyClaimsByOutpoint } from 'lbry-redux';

@@ -11,12 +11,13 @@ import { doConditionalAuthNavigate, doDaemonReady, doAutoUpdate } from 'redux/ac
 import { doNotify, doBlackListedOutpointsSubscribe, isURIValid } from 'lbry-redux';
 import { doNavigate } from 'redux/actions/navigation';
 import { doDownloadLanguages, doUpdateIsNightAsync } from 'redux/actions/settings';
-import { doUserEmailVerify, doAuthenticate } from 'redux/actions/user';
+import { doUserEmailVerify, doAuthenticate } from 'lbryinc';
 import 'scss/all.scss';
 import store from 'store';
 import app from './app';
 import analytics from './analytics';
 import doLogWarningConsoleMessage from './logWarningConsoleMessage';
+import pjson from 'package.json';
 
 const { autoUpdater } = remote.require('electron-updater');
 const APPPAGEURL = 'lbry://?';
@@ -156,7 +157,7 @@ const init = () => {
     ReactDOM.render(
       <Provider store={store}>
         <SplashScreen
-          authenticate={() => app.store.dispatch(doAuthenticate())}
+          authenticate={() => app.store.dispatch(doAuthenticate(pjson.version))}
           onReadyToLaunch={onDaemonReady}
         />
       </Provider>,

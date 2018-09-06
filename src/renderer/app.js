@@ -37,5 +37,6 @@ global.__ = i18n.__;
 // eslint-disable-next-line no-underscore-dangle
 global.__n = i18n.__n;
 global.app = app;
+global.desktop = true;
 
 export default app;

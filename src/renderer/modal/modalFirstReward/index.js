@@ -1,7 +1,7 @@
-import rewards from 'rewards';
+import { rewards } from 'lbryinc';
 import { connect } from 'react-redux';
 import { doHideNotification } from 'lbry-redux';
-import { makeSelectRewardByType } from 'redux/selectors/rewards';
+import { makeSelectRewardByType } from 'lbryinc';
 import ModalFirstReward from './view';
 
 const select = state => {

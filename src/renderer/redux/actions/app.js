@@ -28,8 +28,9 @@ import {
   selectRemoteVersion,
   selectUpgradeTimer,
 } from 'redux/selectors/app';
-import { doAuthenticate } from 'redux/actions/user';
+import { doAuthenticate } from 'lbryinc';
 import { lbrySettings as config } from 'package.json';
+import pjson from 'package.json';
 
 const { autoUpdater } = remote.require('electron-updater');
 const { download } = remote.require('electron-dl');
@@ -336,8 +337,9 @@ export function doAlertError(errorList) {
 export function doDaemonReady() {
   return (dispatch, getState) => {
     const state = getState();
+    const version = pjson.version;
 
-    dispatch(doAuthenticate());
+    dispatch(doAuthenticate(version));
     dispatch({ type: ACTIONS.DAEMON_READY });
     dispatch(doFetchDaemonSettings());
     dispatch(doBalanceSubscribe());

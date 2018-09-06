@@ -2,7 +2,7 @@ import * as settings from 'constants/settings';
 import { connect } from 'react-redux';
 import { doHideNotification } from 'lbry-redux';
 import { doSetClientSetting } from 'redux/actions/settings';
-import { selectEmailToVerify, selectUser } from 'redux/selectors/user';
+import { selectEmailToVerify, selectUser } from 'lbryinc';
 import ModalEmailCollection from './view';
 
 const select = state => ({

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { selectUserEmail } from 'redux/selectors/user';
+import { selectUserEmail } from 'lbryinc';
 import CardVerify from './view';
 
 const select = state => ({

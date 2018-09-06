@@ -4,7 +4,7 @@ import { doChangeVolume } from 'redux/actions/app';
 import { selectVolume } from 'redux/selectors/app';
 import { doPlayUri, doSetPlayingUri } from 'redux/actions/content';
 import { doPlay, doPause, savePosition } from 'redux/actions/media';
-import { doClaimEligiblePurchaseRewards } from 'redux/actions/rewards';
+import { doClaimEligiblePurchaseRewards } from 'lbryinc';
 import {
   makeSelectMetadataForUri,
   makeSelectContentTypeForUri,

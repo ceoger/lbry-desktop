@@ -3,9 +3,9 @@ import {
   makeSelectClaimRewardError,
   makeSelectRewardByType,
   makeSelectIsRewardClaimPending,
-} from 'redux/selectors/rewards';
+} from 'lbryinc';
 import { doNavigate } from 'redux/actions/navigation';
-import { doClaimRewardType, doClaimRewardClearError } from 'redux/actions/rewards';
+import { doClaimRewardType, doClaimRewardClearError } from 'lbryinc';
 import RewardLink from './view';
 
 const makeSelect = () => {

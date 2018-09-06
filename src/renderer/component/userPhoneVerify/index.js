@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { doUserPhoneVerify, doUserPhoneReset } from 'redux/actions/user';
+import { doUserPhoneVerify, doUserPhoneReset } from 'lbryinc';
 import {
   selectPhoneToVerify,
   selectPhoneVerifyErrorMessage,
   selectUserCountryCode,
-} from 'redux/selectors/user';
+} from 'lbryinc';
 import UserPhoneVerify from './view';
 
 const select = state => ({

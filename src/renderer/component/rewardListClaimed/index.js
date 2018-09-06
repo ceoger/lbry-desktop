@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { selectClaimedRewards } from 'redux/selectors/rewards';
+import { selectClaimedRewards } from 'lbryinc';
 import RewardListClaimed from './view';
 
 const select = state => ({

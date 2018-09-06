@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { doUserPhoneNew } from 'redux/actions/user';
-import { selectPhoneNewErrorMessage } from 'redux/selectors/user';
+import { doUserPhoneNew } from 'lbryinc';
+import { selectPhoneNewErrorMessage } from 'lbryinc';
 import UserPhoneNew from './view';
 
 const select = state => ({

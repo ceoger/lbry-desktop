@@ -3,7 +3,7 @@ import * as settings from 'constants/settings';
 import { connect } from 'react-redux';
 import { doHideNotification } from 'lbry-redux';
 import { doSetClientSetting } from 'redux/actions/settings';
-import { selectPhoneToVerify, selectUser } from 'redux/selectors/user';
+import { selectPhoneToVerify, selectUser } from 'lbryinc';
 import { doNavigate } from 'redux/actions/navigation';
 import ModalPhoneCollection from './view';
 

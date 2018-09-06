@@ -3,8 +3,8 @@ import {
   selectUserInvitesRemaining,
   selectUserInviteNewIsPending,
   selectUserInviteNewErrorMessage,
-} from 'redux/selectors/user';
-import { doUserInviteNew } from 'redux/actions/user';
+} from 'lbryinc';
+import { doUserInviteNew } from 'lbryinc';
 import InviteNew from './view';
 
 const select = state => ({

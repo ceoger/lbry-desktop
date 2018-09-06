@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { selectUnclaimedRewardValue, selectFetchingRewards } from 'redux/selectors/rewards';
-import { doRewardList } from 'redux/actions/rewards';
+import { selectUnclaimedRewardValue, selectFetchingRewards } from 'lbryinc';
+import { doRewardList } from 'lbryinc';
 import { doFetchRewardedContent } from 'redux/actions/content';
 import RewardSummary from './view';
 

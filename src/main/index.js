@@ -254,7 +254,10 @@ ipcMain.on('version-info-requested', () => {
 });
 
 ipcMain.on('get-auth-token', event => {
+  console.log("getting auth token")
   keytar.getPassword('LBRY', 'auth_token').then(token => {
+    console.log("got it", token)
+
     event.sender.send('auth-token-response', token ? token.toString().trim() : null);
   });
 });

@@ -3,12 +3,12 @@ import {
   doUserEmailVerify,
   doUserEmailVerifyFailure,
   doUserResendVerificationEmail,
-} from 'redux/actions/user';
+} from 'lbryinc';
 import {
   selectEmailVerifyIsPending,
   selectEmailToVerify,
   selectEmailVerifyErrorMessage,
-} from 'redux/selectors/user';
+} from 'lbryinc';
 import UserEmailVerify from './view';
 
 const select = state => ({

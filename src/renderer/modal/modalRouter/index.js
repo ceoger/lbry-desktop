@@ -9,7 +9,7 @@ import {
   selectNotificationProps,
 } from 'lbry-redux';
 import { makeSelectClientSetting } from 'redux/selectors/settings';
-import { selectUser, selectUserIsVerificationCandidate } from 'redux/selectors/user';
+import { selectUser, selectUserIsVerificationCandidate } from 'lbryinc';
 
 import ModalRouter from './view';
 

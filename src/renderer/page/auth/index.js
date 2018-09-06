@@ -8,7 +8,7 @@ import {
   selectUser,
   selectUserIsPending,
   selectIdentityVerifyIsPending,
-} from 'redux/selectors/user';
+} from 'lbryinc';
 import AuthPage from './view';
 
 const select = state => ({

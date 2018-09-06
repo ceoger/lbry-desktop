@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
 import { doNotify, MODALS } from 'lbry-redux';
 import { doNavigate } from 'redux/actions/navigation';
-import { doUserIdentityVerify } from 'redux/actions/user';
-import rewards from 'rewards';
-import { makeSelectRewardByType } from 'redux/selectors/rewards';
+import { doUserIdentityVerify } from 'lbryinc';
+import { rewards } from 'lbryinc';
+import { makeSelectRewardByType } from 'lbryinc';
 import {
   selectIdentityVerifyIsPending,
   selectIdentityVerifyErrorMessage,
-} from 'redux/selectors/user';
+} from 'lbryinc';
 import UserVerify from './view';
 
 const select = state => {
