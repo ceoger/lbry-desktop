@@ -34,7 +34,7 @@ script:
 - |
   if [ "$TARGET" == "windows" ]; then
     docker run --rm \
-      --env-file <(env | grep -iE 'DEBUG|TARGET|TRAVIS|CSC_|GH_|AWS_') \
+      --env-file <(env | grep -iE 'DEBUG|TARGET|CSC_|GH_|AWS_') \
       -v ${PWD}:/project \
       electronuserland/builder:wine \
       /bin/bash -c "yarn --link-duplicates --pure-lockfile && yarn build --win --publish onTag";
