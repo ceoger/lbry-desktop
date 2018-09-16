@@ -33,9 +33,11 @@ before_script:
 script:
 - |
   if [ "$TARGET" == "windows" ]; then
-    echo "ENV___________________________________";
-    env;
+    # echo "ENV___________________________________";
+    # env;
     echo "GREP__________________________________"
+    env | grep -v '\r' | grep -iE 'DEBUG|TARGET|NODE_|ELECTRON_|YARN_|NPM_|CI|CIRCLE|TRAVIS|APPVEYOR_|CSC_|GH_|GITHUB_|BT_|AWS_|STRIP|BUILD_|WIN_';
+    echo "GREP REMOVE____________________________"
     env | grep -v '\r' | grep -iE 'DEBUG|TARGET|NODE_|ELECTRON_|YARN_|NPM_|CI|CIRCLE|TRAVIS|APPVEYOR_|CSC_|GH_|GITHUB_|BT_|AWS_|STRIP|BUILD_|WIN_';
     echo "END____________________________________________________________"
     docker run --rm \
