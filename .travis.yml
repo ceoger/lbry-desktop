@@ -35,10 +35,10 @@ script:
   if [ "$TARGET" == "windows" ]; then
     # echo "ENV___________________________________";
     # env;
-    # echo "GREP__________________________________"
-    # env | grep -iE 'DEBUG|TARGET|TRAVIS|GH_|GITHUB_|AWS_|CSC_KEY_PASSWORD|CSC_LINK|WIN_CSC_LINK';
-    # echo "GREP REMOVE____________________________"
-    # env | grep -v '\r' | grep -iE 'DEBUG|TARGET|TRAVIS|GH_|GITHUB_|AWS_|CSC_KEY_PASSWORD|CSC_LINK|WIN_CSC_LINK';
+    echo "GREP__________________________________"
+    env | grep -iE 'DEBUG|TARGET|TRAVIS|GH_|GITHUB_|AWS_|CSC_KEY_PASSWORD|CSC_LINK|WIN_CSC_LINK';
+    echo "GREP REMOVE____________________________"
+    env | grep -v '\r' | grep -iE 'DEBUG|TARGET|TRAVIS|GH_|GITHUB_|AWS_|CSC_KEY_PASSWORD|CSC_LINK|WIN_CSC_LINK';
     # echo "END____________________________________________________________"
     docker run --rm \
       --env-file <(env) \
