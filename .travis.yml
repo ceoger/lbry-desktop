@@ -35,13 +35,13 @@ script:
   if [ "$TARGET" == "windows" ]; then
     # echo "ENV___________________________________";
     # env;
-    echo "GREP__________________________________"
-    env | grep -iE 'DEBUG|TARGET|TRAVIS|GH_|GITHUB_|AWS_|CSC_KEY_PASSWORD|CSC_LINK|WIN_CSC_LINK';
-    echo "GREP REMOVE____________________________"
-    env | grep -v '\r' | grep -iE 'DEBUG|TARGET|TRAVIS|GH_|GITHUB_|AWS_|CSC_KEY_PASSWORD|CSC_LINK|WIN_CSC_LINK';
-    echo "END____________________________________________________________"
+    # echo "GREP__________________________________"
+    # env | grep -iE 'DEBUG|TARGET|TRAVIS|GH_|GITHUB_|AWS_|CSC_KEY_PASSWORD|CSC_LINK|WIN_CSC_LINK';
+    # echo "GREP REMOVE____________________________"
+    # env | grep -v '\r' | grep -iE 'DEBUG|TARGET|TRAVIS|GH_|GITHUB_|AWS_|CSC_KEY_PASSWORD|CSC_LINK|WIN_CSC_LINK';
+    # echo "END____________________________________________________________"
     docker run --rm \
-      --env-file <(env | grep -v '\r' | grep -iE 'DEBUG|TARGET|TRAVIS|GH_|GITHUB_|AWS_|CSC_KEY_PASSWORD|CSC_LINK|WIN_CSC_LINK') \
+      --env-file <(env) \
       -v ${PWD}:/project \
       electronuserland/builder:wine \
       /bin/bash -c "yarn --link-duplicates --pure-lockfile && yarn build --win --publish onTag";
