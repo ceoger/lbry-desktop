@@ -42,7 +42,6 @@ script:
     # echo "END____________________________________________________________"
     ENVS=`env | grep -iE 'DEBUG|TARGET|TRAVIS|GH_|GITHUB_|AWS_|CSC_'`;
     docker run $ENVS --rm \
-      # --env-file <(env | grep -vE '\n' | grep -iE 'DEBUG|TARGET|TRAVIS|GH_|GITHUB_|AWS_|CSC_KEY_PASSWORD|CSC_LINK|WIN_CSC_LINK') \
       -v ${PWD}:/project \
       electronuserland/builder:wine \
       /bin/bash -c "yarn --link-duplicates --pure-lockfile && yarn build --win --publish onTag";
