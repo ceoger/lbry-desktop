@@ -35,13 +35,14 @@ script:
   if [ "$TARGET" == "windows" ]; then
     # echo "ENV___________________________________";
     # env;
-    echo "GREP__________________________________"
-    env | grep -iE 'DEBUG|TARGET|TRAVIS|GH_|GITHUB_|AWS_|CSC_';
-    echo "GREP REMOVE____________________________"
-    env | grep -iE 'DEBUG|TARGET|TRAVIS|GH_|GITHUB_|AWS_|CSC_';
+    # echo "GREP__________________________________"
+    # env | grep -iE 'DEBUG|TARGET|TRAVIS|GH_|GITHUB_|AWS_|CSC_';
+    # echo "GREP REMOVE____________________________"
+    # env | grep -iE 'DEBUG|TARGET|TRAVIS|GH_|GITHUB_|AWS_|CSC_';
     # echo "END____________________________________________________________"
-    ENVS=`env | grep -iE 'DEBUG|TARGET|TRAVIS|GH_|GITHUB_|AWS_|CSC_'`;
-    docker run --rm $ENVS \
+    # ENVS=`env | grep -iE 'DEBUG|TARGET|TRAVIS|GH_|GITHUB_|AWS_|CSC_'`;
+    ENVS=`env | grep -iE '^(DEBUG|NODE_|ELECTRON_|YARN_|NPM_|CI|CIRCLE|TRAVIS|APPVEYOR_|CSC_|_TOKEN|_KEY|AWS_|STRIP|BUILD_)([A-Z]|_)*=' | sed -n '/^[^\t]/s/=.*//p' | sed '/^$/d' | sed 's/^/-e /g' | tr '\n' ' '`
+    docker run $ENVS --rm \
       -v ${PWD}:/project \
       electronuserland/builder:wine \
       /bin/bash -c "yarn --link-duplicates --pure-lockfile && yarn build --win --publish onTag";
